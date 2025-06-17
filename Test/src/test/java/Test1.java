@@ -9,9 +9,7 @@ import org.junit.jupiter.params.provider.ValueSource;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-/**
- * Klasa testująca funkcjonalności klasy Main.
- */
+
 class MainTest {
 
     @Test
@@ -66,11 +64,10 @@ class MainTest {
         assertEquals(expected, Main.checkNumber(number),
             () -> String.format("Liczba %d powinna być klasyfikowana jako '%s'", number, expected));
     }
-
     @Test
     @DisplayName("Test metody printNumbers - weryfikacja czy nie rzuca wyjątków")
     void printNumbers_shouldExecuteWithoutExceptions() {
-        // Test sprawdzający czy metoda wykonuje się bez wyjątków
-        assertDoesNotThrow(() -> Main.printNumbers());
-    }
+    assertDoesNotThrow(() -> Main.printNumbers());
+}
+   
 }
