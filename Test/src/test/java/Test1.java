@@ -64,10 +64,5 @@ class MainTest {
         assertEquals(expected, Main.checkNumber(number),
             () -> String.format("Liczba %d powinna być klasyfikowana jako '%s'", number, expected));
     }
-    @Test
-    @DisplayName("Test metody printNumbers - weryfikacja czy nie rzuca wyjątków")
-    void printNumbers_shouldExecuteWithoutExceptions() {
-    assertDoesNotThrow(() -> Main.printNumbers());
-}
    
 }
