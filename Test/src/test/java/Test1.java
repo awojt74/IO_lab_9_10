@@ -4,27 +4,20 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-
+/**
+ * Testy jednostkowe dla klasy Main.
+ */
 class MainTest {
 
     @Test
     @DisplayName("Test dodawania dwóch liczb")
     void add_shouldReturnCorrectSum() {
-        // Given
-        int a = 2;
-        int b = 3;
-        int expected = 5;
-
-        // When
-        int result = Main.add(a, b);
-
-        // Then
-        assertEquals(expected, result, "2 + 3 powinno równać się 5");
+        assertEquals(5, Main.add(2, 3), "2 + 3 powinno równać się 5");
     }
 
     @Test
@@ -64,5 +57,10 @@ class MainTest {
         assertEquals(expected, Main.checkNumber(number),
             () -> String.format("Liczba %d powinna być klasyfikowana jako '%s'", number, expected));
     }
-   
+
+    @Test
+    @DisplayName("Test wyświetlania liczb")
+    void printNumbers_shouldExecuteWithoutExceptions() {
+        assertDoesNotThrow(Main::printNumbers, "Metoda printNumbers nie powinna rzucać wyjątków");
+    }
 }
